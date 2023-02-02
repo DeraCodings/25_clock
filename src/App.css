@@ -1,0 +1,10 @@
+.time-sets{
+  display: flex;
+  gap: 1rem;
+}
+
+.time-sets button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
