@@ -86,16 +86,16 @@ function App() {
   return (
     <div className="App">
       <h1>Pomodoro Clock</h1>
-      <Length title='break length' changeTime={changeTime} type='break' time={breakTime} formatTime={formatTime} />
-      <Length title='session length' changeTime={changeTime} type='session' time={sessionTime} formatTime={formatTime} />
-      <h3>{ onBreak ? 'Break' : 'Session' }</h3>
-      <h2>{formatTime(displayTime)}</h2>
-      <button onClick={() => controlTime()}>
+      <Length title='break length' changeTime={changeTime} type='break' time={breakTime} formatTime={formatTime} id='break-label' id2='break-length' inc='break-increment' dec='break-decrement' />
+      <Length title='session length' changeTime={changeTime} type='session' time={sessionTime} formatTime={formatTime} id='session-label' id2='session-length' inc='session-increment' dec='session-decrement' />
+      <h3 id='time-label'>{ onBreak ? 'Break' : 'Session' }</h3>
+      <h2 id='time-left'>{formatTime(displayTime)}</h2>
+      <button onClick={() => controlTime()} id='start_stop'>
         {isTimeOn ?
           <HiPause /> : <HiPlay />
         }
       </button>
-      <button onClick={() => resetTime()}><HiOutlineArrowPath /></button>
+      <button onClick={() => resetTime()} id='reset'><HiOutlineArrowPath /></button>
     </div>
   )
 }
